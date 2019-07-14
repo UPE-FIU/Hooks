@@ -15,7 +15,7 @@ const exec = require("child_process").exec;
 http
   .createServer(function(req, res) {
     req.on("data", function(chunk) {
-      //get signatures for all repos...note:  each repo must have a unique secrete
+      //get signatures for all repos...note:  each repo must have a unique secret
       let sig =
         "sha1=" +
         crypto
@@ -32,7 +32,7 @@ http
       //choose which was updated ... posible bug: two repos get updated at the same time
       switch (req.headers["x-hub-signature"]) {
         case sig:
-          exec("cd " + repo + " && git pull && yarn build"); //execute whatever command you want
+          exec("cd " + repo + " && git pull && yarn build"); //execute whatever command you want here 
           break;
         case sig1:
           exec("cd " + repo1 + " && git pull && yarn build");
