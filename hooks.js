@@ -29,7 +29,7 @@ http
           .update(chunk.toString())
           .digest("hex");
 
-      //choose which was updated ... posible bug: two repos get updated at the same time
+      //choose which was updated ... 
       switch (req.headers["x-hub-signature"]) {
         case sig:
           exec("cd " + repo + " && git pull && yarn build"); //execute whatever command you want here 
