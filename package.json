@@ -12,7 +12,7 @@
         "stop": "pm2 stop Hooks",
         "restart": "pm2 restart Hooks",
         "status": "pm2 status Hooks",
-        "clear": "pm2 flush",
+        "flush": "pm2 flush",
         "delete": "pm2 delete Hooks"
     },
     "dependencies": {

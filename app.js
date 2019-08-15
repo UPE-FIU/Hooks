@@ -10,9 +10,7 @@ const exec = require("child_process").exec;
 
 const { PORT } = process.env;
 
-/**
- *Our server
- */
+//Our server
 http
   .createServer(function(req, res) {
     let response = "UPDATES: "; //github log response
@@ -27,7 +25,7 @@ http
 
       //choose updated repo
       repos.map(repo => {
-        let { secret, path, needToBuild } = repo;
+        let { secret, path, commands } = repo;
         let currentSig =
           "sha1=" +
           crypto
@@ -37,7 +35,7 @@ http
 
         if (remoteSig === currentSig) {
           //execute commands
-          exec("cd " + path + " && git pull", (error, stdout, stderr) => {
+          exec("cd " + path + " && " + commands, (error, stdout, stderr) => {
             if (error) {
               response += `exec error: ${error}`;
               return;
@@ -45,20 +43,12 @@ http
             response += `, stdout: ${stdout}`;
             response += `, stderr: ${stderr}`;
           });
-          if (needToBuild)
-            exec("cd " + path + "yarn build", (error, stdout, stderr) => {
-              if (error) {
-                response += `exec error: ${error}`;
-                return;
-              }
-              response += `, stdout: ${stdout}`;
-              response += `, stderr: ${stderr}`;
-            });
         }
       });
     });
     if (response === "UPDATES: ") response += "Nothing Was Executed...";
     res.write(response);
+    console.log(response);
     res.end();
   })
   .listen(PORT || 8080);
