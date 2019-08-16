@@ -14,10 +14,11 @@ const {
   SHELL_2017_SECRET
 } = process.env;
 
-const restart = "systemctl reload nginx";
 const pull = "git pull";
 const build = "yarn build";
 const update = "yarn";
+const restart = "yarn restart";
+const reload = "systemctl reload nginx";
 
 module.exports = [
   {
@@ -28,17 +29,17 @@ module.exports = [
   {
     path: path.resolve(__dirname, "../Turtle"),
     secret: TURTLE_SECRET,
-    commands: `${pull} && ${update}`
+    commands: `${pull} && ${update} && ${reload}`
   },
   {
     path: path.resolve(__dirname, "../Shell"),
     secret: SHELL_SECRET,
-    commands: `${pull} && ${update} && ${build} && ${restart}`
+    commands: `${pull} && ${update} && ${build} && ${reload}`
   },
   {
     path: path.resolve(__dirname, "../Anchor"),
     secret: ANCHOR_SECRET,
-    commands: `${pull} && ${update} && ${build} && ${restart}`
+    commands: `${pull} && ${update} && ${build} && ${reload}`
   },
   {
     path: path.resolve(__dirname),
