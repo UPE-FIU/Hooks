@@ -9,6 +9,7 @@ const {
   SHELL_SECRET,
   ANCHOR_SECRET,
   HOOKS_SECRET,
+  SUNRISE_SECRETE,
   PRE_REGISTRATION_SECRET,
   SHELL_2018_SECRET,
   SHELL_2017_SECRET
@@ -39,6 +40,11 @@ module.exports = [
   {
     path: path.resolve(__dirname, "../Anchor"),
     secret: ANCHOR_SECRET,
+    commands: `${pull} && ${update} && ${build} && ${reload}`
+  },
+  {
+    path: path.resolve(__dirname, "../Sunrise"),
+    secret: SUNRISE_SECRETE,
     commands: `${pull} && ${update} && ${build} && ${reload}`
   },
   {
