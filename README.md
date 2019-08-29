@@ -12,3 +12,9 @@ A little NodeJS server for managing GitHub events
 `yarn delete` - Deletes process </br>
 
 For more details see [package.json](https://github.com/UPE-FIU/Hooks/blob/master/package.json)
+
+## Authors
+
+[@Jehfkemsy](https://github.com/jehfkemsy)
+
+## Contributors 
