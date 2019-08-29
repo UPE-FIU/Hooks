@@ -8,7 +8,7 @@ const crypto = require("crypto");
 //Docs: https://nodejs.org/api/child_process.html
 const exec = require("child_process").exec;
 
-const { PORT } = process.env;
+const PORT = process.env.PORT || 8080;
 
 //Our server
 http
@@ -51,4 +51,4 @@ http
     console.log(response);
     res.end();
   })
-  .listen(PORT || 8080);
+  .listen(PORT, () => console.log(`📡  is live on port ${PORT}`));
