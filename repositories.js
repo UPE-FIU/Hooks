@@ -1,5 +1,5 @@
 /**
- * Repositories Objects
+ * Repositories
  */
 const path = require("path");
 
@@ -9,7 +9,7 @@ const {
   SHELL_SECRET,
   ANCHOR_SECRET,
   HOOKS_SECRET,
-  SUNRISE_SECRETE,
+  SUNRISE_SECRET,
   PRE_REGISTRATION_SECRET,
   SHELL_2018_SECRET,
   SHELL_2017_SECRET
@@ -17,7 +17,7 @@ const {
 
 const pull = "git pull";
 const build = "yarn build";
-const update = "yarn";
+const update = "yarn"; // update dependencies
 const restart = "yarn restart";
 const reload = "systemctl reload nginx";
 
@@ -30,12 +30,12 @@ module.exports = [
   {
     path: path.resolve(__dirname, "../Turtle"),
     secret: TURTLE_SECRET,
-    commands: `${pull} && ${update} && ${reload}`
+    commands: `${pull} && ${update} && ${restart}`
   },
   {
     path: path.resolve(__dirname, "../Shell"),
     secret: SHELL_SECRET,
-    commands: `${pull} && ${update} && ${build} && ${reload}`
+    commands: `${pull} && ${update} && ${restart}`
   },
   {
     path: path.resolve(__dirname, "../Anchor"),
@@ -44,13 +44,13 @@ module.exports = [
   },
   {
     path: path.resolve(__dirname, "../Sunrise"),
-    secret: SUNRISE_SECRETE,
+    secret: SUNRISE_SECRET,
     commands: `${pull} && ${update} && ${build} && ${reload}`
   },
   {
     path: path.resolve(__dirname),
     secret: HOOKS_SECRET,
-    commands: `${pull} && ${update}`
+    commands: `${pull} && ${update} && ${restart}`
   },
   {
     path: path.resolve(__dirname, "../Shell-Pre-registration-2019"),
