@@ -1,6 +1,6 @@
 # 📡Hooks
 
-[![Shellhacks](https://hackathon.badge.pw/shellhacks)](https://shellhacks.net)[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+[![Shellhacks](https://hackathon.badge.pw/shellhacks)](https://shellhacks.net) [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
 A little NodeJS server for managing GitHub events
 
@@ -8,12 +8,12 @@ A little NodeJS server for managing GitHub events
 
 ## Getting started
 
-1. Set up your environment
+1. Setting up your environment
 
-   - [Set up](https://developer.github.com/webhooks/creating/#setting-up-a-webhook) Github [Webhooks](https://help.github.com/en/articles/about-webhooks) for your repo(s)
-   - Create a [`.env`](https://github.com/UPE-FIU/Hooks/blob/master/example.env) file and add your secrets
+   - [Set up](https://developer.github.com/webhooks/creating/#setting-up-a-webhook) your Github [Webhooks](https://help.github.com/en/articles/about-webhooks)
+   - Create a [`.env`](https://github.com/UPE-FIU/Hooks/blob/master/example.env) file and add your [secret(s)](https://developer.github.com/webhooks/creating/#secret)
 
-2. Add repo path(s) and command(s) in [repositories.js](https://github.com/UPE-FIU/Hooks/blob/jehf-bug-fix/repositories.js)
+2. Add your repo path(s) and command(s) in [repositories.js](https://github.com/UPE-FIU/Hooks/blob/jehf-bug-fix/repositories.js)
 
 3. [Fire it up](https://github.com/UPE-FIU/Hooks/tree/master#available-commands) 🚀
 
@@ -22,6 +22,7 @@ A little NodeJS server for managing GitHub events
 ## Available Commands
 
 ...
+<br/>
 `yarn start` - Starts PM2 process with argument `--name`</br>
 `yarn stop` - Stops process </br>
 `yarn restart` - Restarts process </br>
