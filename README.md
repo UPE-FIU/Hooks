@@ -28,7 +28,7 @@ A little NodeJS server for managing GitHub events
 `yarn restart` - Restarts process </br>
 ...
 
-For more details see [package.json](https://github.com/UPE-FIU/Hooks/blob/master/package.json)
+> For more details see [package.json](https://github.com/UPE-FIU/Hooks/blob/master/package.json)
 
 ## Contributors ✨
 
@@ -49,3 +49,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
