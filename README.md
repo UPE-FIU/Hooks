@@ -1,16 +1,31 @@
 # 📡Hooks
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
+[![Shellhacks](https://hackathon.badge.pw/shellhacks)](https://shellhacks.net)[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 
 A little NodeJS server for managing GitHub events
 
+---
+
+## Getting started
+
+1. Set up your environment
+
+   - [Set up](https://developer.github.com/webhooks/creating/#setting-up-a-webhook) Github [Webhooks](https://help.github.com/en/articles/about-webhooks) for your repo(s)
+   - Create a [`.env`](https://github.com/UPE-FIU/Hooks/blob/master/example.env) file and add your secrets
+
+2. Add repo path(s) and command(s) in [repositories.js](https://github.com/UPE-FIU/Hooks/blob/jehf-bug-fix/repositories.js)
+
+3. [Fire it up](https://github.com/UPE-FIU/Hooks/tree/master#available-commands) 🚀
+
+   - Feel free to PR changes or create an issue with any suggestions 😃
+
 ## Available Commands
 
+...
 `yarn start` - Starts PM2 process with argument `--name`</br>
 `yarn stop` - Stops process </br>
 `yarn restart` - Restarts process </br>
-`yarn status` - Logs process status </br>
-`yarn clear` - Clear process' logs </br>
-`yarn delete` - Deletes process </br>
+...
 
 For more details see [package.json](https://github.com/UPE-FIU/Hooks/blob/master/package.json)
 
@@ -29,6 +44,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
